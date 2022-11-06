@@ -1,4 +1,4 @@
-const response = {
+const responseUtil = {
     returnResponse: (res, status, response) => {
         res.status(status)
         res.send(response)
@@ -6,4 +6,4 @@ const response = {
     }
 }
 
-module.exports = response
+module.exports = responseUtil

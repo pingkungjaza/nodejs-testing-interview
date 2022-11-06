@@ -1,3 +1,6 @@
-const response = require('../utils/response')
+const utils = {
+    response: require('./response_util'),
+    restaurant: require('./restaurant_util')
+}
 
-module.exports = response
+module.exports = utils
