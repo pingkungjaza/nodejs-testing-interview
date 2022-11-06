@@ -1,15 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const crypto = require("crypto")
 const restaurantController = require('../controllers')
 
-router.get("/allTables", (req, res) => {
-    res.status(200)
-    res.send({ status: 'success', message: `Our restaurant has ${table.length} tables`, httpStatus: 200 })
-})
-
-router.post("/initialize-all-tables", (req, res) => restaurantController.initializeAllTables(req, res))
-router.put("/reserve-tables", (req, res) => restaurantController.reserveTables(req, res))
-router.put("/cancel-tables", (req, res) => restaurantController.cancelTables(req, res))
+router.get("/tables", (req, res) => restaurantController.getTables(req, res))
+router.post("/initialize", (req, res) => restaurantController.initialize(req, res))
+router.put("/reserve", (req, res) => restaurantController.reserve(req, res))
+router.put("/cancel", (req, res) => restaurantController.cancel(req, res))
 
 module.exports = router
